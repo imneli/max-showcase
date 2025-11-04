@@ -3,7 +3,10 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="w-full bg-white min-h-[calc(100vh-80px)] flex items-center">
+    <section
+      id="sobre"
+      className="w-full bg-linear-to-b from-white to-gray-50 min-h-[calc(100vh-80px)] flex items-center"
+    >
       <div className="container mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -64,13 +67,23 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="px-8 py-4 bg-[#892ba4] text-white rounded-lg font-semibold hover:bg-[#6d2282] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-purple-200">
+              <a 
+                href="https://instagram.com/maxsolutions_ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-[#892ba4] text-white rounded-lg font-semibold hover:bg-[#6d2282] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-purple-200"
+              >
                 Começar Agora
                 <ArrowRight size={20} />
-              </button>
-              <button className="px-8 py-4 bg-white text-black border-2 border-black rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+              </a>
+              <a 
+                href="https://instagram.com/maxsolutions_ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-white text-black border-2 border-black rounded-lg font-semibold hover:bg-gray-50 transition-colors text-center"
+              >
                 Saber Mais
-              </button>
+              </a>
             </div>
           </div>
 
@@ -89,25 +102,16 @@ export default function HeroSection() {
                     </p>
                   </div>
 
-                  {/* QR Code Placeholder */}
-                  <div className="h-64 w-64 bg-white border-4 border-black rounded-xl flex items-center justify-center relative overflow-hidden">
-                    {/* QR Code Pattern Simulation */}
-                    <div className="absolute inset-0 grid grid-cols-8 grid-rows-8 gap-1 p-4">
-                      {[...Array(64)].map((_, i) => (
-                        <div
-                          key={i}
-                          className={`${
-                            Math.random() > 0.5 ? "bg-black" : "bg-white"
-                          } rounded-sm`}
-                        />
-                      ))}
-                    </div>
-                    {/* Center Logo */}
-                    <div className="relative z-10 h-16 w-16 bg-white rounded-lg border-2 border-black flex items-center justify-center">
-                      <span className="text-2xl font-bold text-[#892ba4]">
-                        M
-                      </span>
-                    </div>
+                  {/* QR Code */}
+                  <div className="h-64 w-64 flex items-center justify-center">
+                    <Image
+                      src="/images/qr-max.png"
+                      alt="QR Code MAX"
+                      width={256}
+                      height={256}
+                      className="w-full h-full object-contain"
+                      priority
+                    />
                   </div>
 
                   <div className="text-center pt-2">

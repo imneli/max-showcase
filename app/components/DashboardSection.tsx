@@ -9,7 +9,7 @@ import {
 
 export default function DashboardSection() {
   return (
-    <section className="w-full bg-white py-20">
+    <section className="w-full bg-linear-to-b from-white to-gray-50 py-20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}

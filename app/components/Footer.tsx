@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white border-t border-gray-200">
+    <footer id="contato" className="w-full bg-white border-t border-gray-200">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
@@ -30,7 +30,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#about"
+                  href="#sobre"
                   className="text-gray-600 hover:text-[#892ba4] transition-colors"
                 >
                   Sobre
@@ -46,18 +46,18 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="#integrantes"
                   className="text-gray-600 hover:text-[#892ba4] transition-colors"
                 >
-                  Contato
+                  Integrantes
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#contato"
                   className="text-gray-600 hover:text-[#892ba4] transition-colors"
                 >
-                  FAQ
+                  Contato
                 </a>
               </li>
             </ul>
@@ -97,20 +97,7 @@ export default function Footer() {
             <p className="text-gray-600 text-sm">
               © 2025 MAX. Todos os direitos reservados.
             </p>
-            <div className="flex gap-6 text-sm">
-              <a
-                href="#"
-                className="text-gray-600 hover:text-[#892ba4] transition-colors"
-              >
-                Privacidade
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 hover:text-[#892ba4] transition-colors"
-              >
-                Termos de Uso
-              </a>
-            </div>
+           
           </div>
         </div>
       </div>
