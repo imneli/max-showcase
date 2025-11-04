@@ -67,7 +67,7 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a 
+              <a
                 href="https://instagram.com/maxsolutions_ai"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -76,7 +76,7 @@ export default function HeroSection() {
                 Começar Agora
                 <ArrowRight size={20} />
               </a>
-              <a 
+              <a
                 href="https://instagram.com/maxsolutions_ai"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -88,36 +88,33 @@ export default function HeroSection() {
           </div>
 
           {/* Right Side - QR Code */}
-          <div className="flex items-center justify-center lg:justify-end">
+          <div className="hidden lg:flex items-center justify-center lg:justify-end">
             <div className="relative">
               {/* Decorative Background */}
               <div className="absolute -inset-4 bg-linear-to-br from-[#892ba4] to-purple-600 rounded-3xl blur-2xl opacity-20"></div>
 
               {/* QR Code Container */}
-              <div className="relative bg-white p-8 rounded-2xl shadow-2xl border border-gray-100">
+              <div className="relative p-10 rounded-2xl">
                 <div className="space-y-4">
                   <div className="text-center">
-                    <p className="text-sm font-semibold text-[#892ba4] mb-2">
+                    <p className="text-base font-semibold text-[#892ba4] mb-2">
                       ESCANEIE PARA ACESSAR
                     </p>
                   </div>
 
                   {/* QR Code */}
-                  <div className="h-64 w-64 flex items-center justify-center">
+                  <div className="h-80 w-80 flex items-center justify-center">
                     <Image
                       src="/images/qr-max.png"
                       alt="QR Code MAX"
-                      width={256}
-                      height={256}
-                      className="w-full h-full object-contain"
+                      width={320}
+                      height={320}
+                      className="w-full h-full object-contain rounded-lg"
                       priority
                     />
                   </div>
 
                   <div className="text-center pt-2">
-                    <p className="text-xs text-gray-600">
-                      Acesse a experiência completa
-                    </p>
                   </div>
                 </div>
               </div>
