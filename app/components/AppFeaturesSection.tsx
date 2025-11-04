@@ -99,9 +99,70 @@ export default function AppFeaturesSection() {
     <section
       ref={sectionRef}
       id="features"
-      className="w-full bg-linear-to-b from-gray-50 to-white py-20"
+      className="w-full bg-linear-to-b from-gray-50 to-white py-20 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Arc connecting from previous section - top left */}
+        <svg
+          className="absolute -top-20 -left-20 w-40 h-40 text-[#892ba4]/10"
+          viewBox="0 0 100 100"
+        >
+          <path
+            d="M 0 100 Q 0 0 100 0"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+        </svg>
+
+        {/* Large circle - left side */}
+        <div className="absolute top-1/4 -left-40 w-80 h-80 border-2 border-purple-200/30 rounded-full"></div>
+
+        {/* Small accent circles - right side */}
+        <div className="absolute top-20 right-20 w-4 h-4 bg-[#892ba4]/20 rounded-full"></div>
+        <div className="absolute top-32 right-32 w-3 h-3 bg-purple-400/20 rounded-full"></div>
+
+        {/* Dot grid pattern - bottom right */}
+        <div className="absolute bottom-20 right-10 grid grid-cols-4 gap-3 opacity-20">
+          {Array.from({ length: 16 }).map((_, i) => (
+            <div
+              key={i}
+              className="w-1.5 h-1.5 bg-[#892ba4] rounded-full"
+            ></div>
+          ))}
+        </div>
+
+        {/* Curved line connecting to next section - bottom */}
+        <svg
+          className="absolute -bottom-20 right-1/4 w-60 h-40 text-purple-300/20"
+          viewBox="0 0 200 100"
+        >
+          <path
+            d="M 0 0 Q 100 50 200 100"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+          />
+        </svg>
+
+        {/* Arc accent - bottom left */}
+        <svg
+          className="absolute bottom-40 -left-10 w-32 h-32 text-purple-200/20"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - iPhone 15 Mockup with Video */}
           <div className="flex items-center justify-center lg:justify-start">
@@ -183,13 +244,63 @@ export default function AppFeaturesSection() {
             {/* Title */}
             <div className="space-y-4">
               <h2 className="app-title text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
-                Controle Total na{" "}
-                <span className="text-[#892ba4]">Palma da Mão</span>
+                <span className="relative inline-block">
+                  Controle Total
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full"
+                    height="12"
+                    viewBox="0 0 300 12"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M5,9 Q150,3 295,9"
+                      stroke="#10b981"
+                      strokeWidth="3"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>{" "}
+                na <span className="text-[#892ba4]">Palma da Mão</span>
               </h2>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                Aplicativo mobile revolucionário que transforma a gestão do
-                almoxarifado com recursos de Inteligência Artificial e
-                assistente virtual inteligente.
+                Aplicativo mobile{" "}
+                <span className="relative inline-block font-semibold text-black">
+                  revolucionário
+                  <svg
+                    className="absolute -bottom-1 left-0 w-full"
+                    height="8"
+                    viewBox="0 0 280 8"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M3,5 Q140,2 277,5"
+                      stroke="#f59e0b"
+                      strokeWidth="2.5"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>{" "}
+                que transforma a gestão do almoxarifado com recursos de{" "}
+                <span className="relative inline-block font-semibold text-black">
+                  Inteligência Artificial
+                  <svg
+                    className="absolute -bottom-1 left-0 w-full"
+                    height="8"
+                    viewBox="0 0 380 8"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M3,5 Q190,2 377,5"
+                      stroke="#ec4899"
+                      strokeWidth="2.5"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>{" "}
+                e assistente virtual inteligente.
               </p>
             </div>
 

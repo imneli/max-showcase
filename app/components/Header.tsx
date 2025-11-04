@@ -81,8 +81,11 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full border-b border-gray-200 bg-white fixed top-0 z-50">
-      <div className="container mx-auto px-6 py-4">
+    <header className="w-full backdrop-blur-lg bg-white/80 fixed top-0 z-50">
+      {/* Gradient fade at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-8 bg-linear-to-b from-transparent to-white/20 pointer-events-none"></div>
+
+      <div className="container mx-auto px-6 py-4 relative z-10">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#sobre" className="flex items-center gap-3">
@@ -93,7 +96,6 @@ export default function Header() {
               height={40}
               className="object-contain rounded-md"
             />
-            <span className="text-xl font-bold text-black">MAX</span>
           </a>
 
           {/* Desktop Navigation */}

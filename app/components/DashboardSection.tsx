@@ -89,9 +89,62 @@ export default function DashboardSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-linear-to-b from-white to-gray-50 py-20"
+      className="w-full bg-linear-to-b from-white to-gray-50 py-20 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Arc - Top Left connecting to previous section */}
+        <svg
+          className="absolute -top-20 -left-20 w-64 h-64 opacity-20"
+          viewBox="0 0 200 200"
+        >
+          <path
+            d="M0,200 Q50,50 200,0"
+            stroke="#892ba4"
+            strokeWidth="3"
+            fill="none"
+          />
+        </svg>
+
+        {/* Large Circle - Right Side */}
+        <div className="absolute top-1/3 -right-32 w-80 h-80 border-2 border-purple-200/40 rounded-full"></div>
+
+        {/* Square Grid - Bottom Left */}
+        <div className="absolute bottom-10 left-10 w-20 h-20 grid grid-cols-3 gap-2 opacity-20">
+          {[...Array(9)].map((_, i) => (
+            <div
+              key={i}
+              className="w-full h-full border border-purple-400 rounded-sm"
+            ></div>
+          ))}
+        </div>
+
+        {/* Connecting Curve to next section */}
+        <svg
+          className="absolute -bottom-20 right-1/4 w-96 h-96 opacity-15"
+          viewBox="0 0 300 300"
+        >
+          <path
+            d="M0,50 Q150,100 300,150"
+            stroke="#892ba4"
+            strokeWidth="2"
+            fill="none"
+            strokeDasharray="8,4"
+          />
+        </svg>
+
+        {/* Gradient Blob - Left */}
+        <div className="absolute top-40 -left-20 w-64 h-64 bg-linear-to-tr from-purple-200/30 to-transparent rounded-full blur-3xl"></div>
+
+        {/* Accent Dots */}
+        <div className="absolute top-20 right-40 flex gap-2">
+          <div className="w-2 h-2 rounded-full bg-purple-400/50"></div>
+          <div className="w-2 h-2 rounded-full bg-purple-300/50"></div>
+          <div className="w-2 h-2 rounded-full bg-purple-500/50"></div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
           <div ref={contentRef} className="space-y-8 order-2 lg:order-1">
@@ -106,13 +159,81 @@ export default function DashboardSection() {
             {/* Title */}
             <div className="space-y-4">
               <h2 className="content-title text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
-                Gestão Completa em{" "}
-                <span className="text-[#892ba4]">Tempo Real</span>
+                <span className="relative inline-block">
+                  Gestão Completa
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full"
+                    height="12"
+                    viewBox="0 0 300 12"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M5,9 Q150,3 295,9"
+                      stroke="#892ba4"
+                      strokeWidth="3"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>{" "}
+                em <span className="text-[#892ba4]">Tempo Real</span>
               </h2>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                Dashboard poderosa com visualização completa de produtos,
-                almoxarifados e integração nativa com SAP. Chatbot inteligente
-                para consultas instantâneas.
+                Dashboard{" "}
+                <span className="relative inline-block font-semibold text-black">
+                  poderosa
+                  <svg
+                    className="absolute -bottom-1 left-0 w-full"
+                    height="8"
+                    viewBox="0 0 200 8"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M3,5 Q100,2 197,5"
+                      stroke="#fbbf24"
+                      strokeWidth="2.5"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>{" "}
+                com visualização completa de produtos, almoxarifados e{" "}
+                <span className="relative inline-block font-semibold text-black">
+                  integração nativa
+                  <svg
+                    className="absolute -bottom-1 left-0 w-full"
+                    height="8"
+                    viewBox="0 0 280 8"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M3,5 Q140,2 277,5"
+                      stroke="#a855f7"
+                      strokeWidth="2.5"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>{" "}
+                com SAP. Chatbot inteligente para{" "}
+                <span className="relative inline-block font-semibold text-black">
+                  consultas instantâneas
+                  <svg
+                    className="absolute -bottom-1 left-0 w-full"
+                    height="8"
+                    viewBox="0 0 320 8"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M3,5 Q160,2 317,5"
+                      stroke="#10b981"
+                      strokeWidth="2.5"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+                .
               </p>
             </div>
 

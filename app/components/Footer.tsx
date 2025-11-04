@@ -91,13 +91,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
+        <div className="mt-12 py-4 border-t border-gray-200 -mx-4 px-6 -mb-6 bg-black rounded-xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm">
+            <p className="text-white font-medium text-sm">
               © 2025 MAX. Todos os direitos reservados.
             </p>
-           
           </div>
         </div>
       </div>

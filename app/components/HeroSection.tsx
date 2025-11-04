@@ -82,12 +82,47 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="sobre"
-      className="w-full bg-linear-to-b from-white to-gray-50 min-h-[calc(100vh-80px)] flex items-center"
+      className="w-full bg-linear-to-b from-white to-gray-50 min-h-[calc(100vh-80px)] flex items-center relative overflow-hidden"
     >
-      <div className="container mx-auto px-6 py-20">
+      {/* Decorative Elements - Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large Circle - Top Right */}
+        <div className="absolute -top-40 -right-40 w-96 h-96 border-2 border-purple-200/30 rounded-full"></div>
+        <div className="absolute -top-32 -right-32 w-80 h-80 border-2 border-purple-300/20 rounded-full"></div>
+
+        {/* Grid Dots Pattern - Top Left (Desktop only) */}
+        <div className="hidden lg:grid absolute top-20 left-10 grid-cols-4 gap-3 opacity-30">
+          {[...Array(16)].map((_, i) => (
+            <div key={i} className="w-2 h-2 rounded-full bg-[#892ba4]"></div>
+          ))}
+        </div>
+
+        {/* Gradient Orb - Bottom Left */}
+        <div className="absolute bottom-20 left-0 w-72 h-72 bg-linear-to-br from-purple-300/20 to-transparent rounded-full blur-3xl"></div>
+
+        {/* Connection Line - Diagonal */}
+        <svg
+          className="absolute top-1/4 right-1/4 w-64 h-64 opacity-20"
+          viewBox="0 0 200 200"
+        >
+          <path
+            d="M10,10 Q100,50 190,190"
+            stroke="#892ba4"
+            strokeWidth="2"
+            fill="none"
+            strokeDasharray="5,5"
+          />
+        </svg>
+
+        {/* Small Accent Circles */}
+        <div className="absolute bottom-40 right-20 w-4 h-4 rounded-full bg-purple-400/40"></div>
+        <div className="absolute top-60 right-60 w-3 h-3 rounded-full bg-purple-500/30"></div>
+      </div>
+
+      <div className="container mx-auto px-6 py-24 lg:py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-6">
+          <div className="space-y-8 lg:space-y-6">
             {/* Badge */}
             <div
               ref={badgeRef}
@@ -107,9 +142,19 @@ export default function HeroSection() {
               >
                 <span className="text-[#892ba4]">MAX</span>
               </h1>
-              <h2 className="hero-text text-2xl md:text-3xl lg:text-4xl font-semibold text-black">
-                NEXT 2025 - FIAP
-              </h2>
+              <div className="hero-text inline-block">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-black">
+                  Festival{" "}
+                  <span
+                    className="inline-block px-4 py-1 bg-[#892ba4] text-white font-bold"
+                    style={{
+                      clipPath: "polygon(0 20%, 100% 0%, 100% 100%, 0 80%)",
+                    }}
+                  >
+                    NEXT 2025
+                  </span>
+                </h2>
+              </div>
             </div>
 
             {/* Description */}
@@ -154,7 +199,7 @@ export default function HeroSection() {
                 href="https://instagram.com/maxsolutions_ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-[#892ba4] text-white rounded-lg font-semibold hover:bg-[#6d2282] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-purple-200"
+                className="group relative px-8 py-4 bg-[#892ba4] text-white rounded-lg font-semibold overflow-hidden transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-purple-300/50 hover:shadow-xl hover:shadow-purple-400/60 hover:scale-105 hover:-translate-y-1"
               >
                 Começar Agora
                 <ArrowRight size={20} />
@@ -163,9 +208,10 @@ export default function HeroSection() {
                 href="https://instagram.com/maxsolutions_ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-white text-black border-2 border-black rounded-lg font-semibold hover:bg-gray-50 transition-colors text-center"
+                className="group relative px-8 py-4 bg-white text-black border-2 border-black rounded-lg font-semibold text-center transition-all duration-300 hover:bg-black hover:text-white hover:scale-105 hover:-translate-y-1 hover:shadow-lg overflow-hidden"
               >
-                Saber Mais
+                <span className="relative z-10">Saber Mais</span>
+                <span className="absolute inset-0 w-0 h-full bg-black transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
           </div>
