@@ -1,9 +1,103 @@
+"use client";
+
 import { Mic, Camera, Package, Sparkles, Brain } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AppFeaturesSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const iphoneRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // iPhone com entrada lateral e scale
+      gsap.from(iphoneRef.current, {
+        scrollTrigger: {
+          trigger: iphoneRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+        x: -150,
+        opacity: 0,
+        scale: 0.9,
+        rotation: -5,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      // Parallax sutil no iPhone
+      gsap.to(iphoneRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+        y: -30,
+        ease: "none",
+      });
+
+      // Badge e título
+      gsap.from(
+        contentRef.current?.querySelectorAll(".app-badge, .app-title") || [],
+        {
+          scrollTrigger: {
+            trigger: contentRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+          x: 100,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+        }
+      );
+
+      // Feature cards com stagger e bounce
+      gsap.from(
+        contentRef.current?.querySelectorAll(".app-feature-card") || [],
+        {
+          scrollTrigger: {
+            trigger: contentRef.current,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+          y: 60,
+          opacity: 0,
+          scale: 0.9,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: "back.out(1.4)",
+        }
+      );
+
+      // Animação nos ícones das features
+      gsap.from(contentRef.current?.querySelectorAll(".feature-icon") || [], {
+        scrollTrigger: {
+          trigger: contentRef.current,
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        scale: 0,
+        rotation: 180,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "back.out(2)",
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="features"
       className="w-full bg-linear-to-b from-gray-50 to-white py-20"
     >
@@ -11,7 +105,7 @@ export default function AppFeaturesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - iPhone 15 Mockup with Video */}
           <div className="flex items-center justify-center lg:justify-start">
-            <div className="relative">
+            <div ref={iphoneRef} className="relative">
               {/* Decorative Background */}
               <div className="absolute -inset-8 bg-linear-to-br from-[#892ba4] to-purple-600 rounded-3xl blur-3xl opacity-20"></div>
 
@@ -77,9 +171,9 @@ export default function AppFeaturesSection() {
           </div>
 
           {/* Right Side - Content */}
-          <div className="space-y-8">
+          <div ref={contentRef} className="space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-purple-200 shadow-sm">
+            <div className="app-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-purple-200 shadow-sm">
               <Sparkles size={16} className="text-[#892ba4]" />
               <span className="text-sm font-medium text-[#892ba4]">
                 Aplicativo Inteligente
@@ -88,7 +182,7 @@ export default function AppFeaturesSection() {
 
             {/* Title */}
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
+              <h2 className="app-title text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
                 Controle Total na{" "}
                 <span className="text-[#892ba4]">Palma da Mão</span>
               </h2>
@@ -102,8 +196,8 @@ export default function AppFeaturesSection() {
             {/* Features Grid */}
             <div className="flex overflow-x-auto gap-4 pb-4 -mx-6 px-6 sm:grid sm:grid-cols-2 sm:overflow-visible sm:mx-0 sm:px-0 scrollbar-hide">
               {/* Feature 1 */}
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
-                <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+              <div className="app-feature-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
+                <div className="feature-icon h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
                   <Mic size={24} className="text-[#892ba4]" />
                 </div>
                 <h3 className="text-lg font-semibold text-black mb-2">
@@ -115,8 +209,8 @@ export default function AppFeaturesSection() {
               </div>
 
               {/* Feature 2 */}
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
-                <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+              <div className="app-feature-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
+                <div className="feature-icon h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
                   <Camera size={24} className="text-[#892ba4]" />
                 </div>
                 <h3 className="text-lg font-semibold text-black mb-2">
@@ -128,8 +222,8 @@ export default function AppFeaturesSection() {
               </div>
 
               {/* Feature 3 */}
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
-                <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+              <div className="app-feature-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
+                <div className="feature-icon h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
                   <Brain size={24} className="text-[#892ba4]" />
                 </div>
                 <h3 className="text-lg font-semibold text-black mb-2">
@@ -141,8 +235,8 @@ export default function AppFeaturesSection() {
               </div>
 
               {/* Feature 4 */}
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
-                <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+              <div className="app-feature-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
+                <div className="feature-icon h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
                   <Package size={24} className="text-[#892ba4]" />
                 </div>
                 <h3 className="text-lg font-semibold text-black mb-2">
