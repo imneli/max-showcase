@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { DottedMap } from "@/components/ui/dotted-map";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Dados dos cards mockados
 const pricingCards = [
@@ -75,22 +76,31 @@ export default function PricingSection() {
   const [currency, setCurrency] = useState<"USD" | "BRL">("BRL");
   const exchangeRate = 5.36;
 
-  // Otimização: usa useMemo para evitar recalcular preços a cada render
-  const formatPrice = useMemo(() => {
-    return (priceUSD: number) => {
-      const symbol = currency === "USD" ? "$" : "R$";
-      const value =
-        currency === "USD"
-          ? priceUSD.toFixed(4)
-          : (priceUSD * exchangeRate).toFixed(4);
+  // Preços pré-calculados para mudança instantânea
+  const prices = {
+    message: {
+      USD: "$ 0.01",
+      BRL: "R$ 0.05",
+    },
+    voice: {
+      USD: "$ 0.0006",
+      BRL: "R$ 0.003",
+    },
+    image: {
+      USD: "$ 0.001",
+      BRL: "R$ 0.005",
+    },
+  };
 
-      return (
-        <>
-          <span className="text-green-500">{symbol}</span> {value}
-        </>
-      );
-    };
-  }, [currency, exchangeRate]);
+  const formatPrice = (cardId: string) => {
+    const price = prices[cardId as keyof typeof prices][currency];
+    const [symbol, value] = price.split(" ");
+    return (
+      <>
+        <span className="text-green-500">{symbol}</span> {value}
+      </>
+    );
+  };
 
   return (
     <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-[#892ba4]">
@@ -174,42 +184,40 @@ export default function PricingSection() {
 
           {/* Currency Toggle with Flags */}
           <div className="flex flex-col items-center gap-3 mb-16">
-            <div className="bg-white/20 backdrop-blur-md rounded-full p-1.5 inline-flex gap-2 border border-white/30">
-              <button
-                onClick={() => setCurrency("BRL")}
-                className={`px-6 py-3 rounded-full font-bold transition-all duration-150 flex items-center gap-3 ${
-                  currency === "BRL"
-                    ? "bg-white text-[#892ba4] shadow-lg scale-105"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                <Image
-                  src="/images/brazil-.png"
-                  alt="Brasil"
-                  width={24}
-                  height={24}
-                  className="rounded-full"
-                />
-                Real
-              </button>
-              <button
-                onClick={() => setCurrency("USD")}
-                className={`px-6 py-3 rounded-full font-bold transition-all duration-150 flex items-center gap-3 ${
-                  currency === "USD"
-                    ? "bg-white text-[#892ba4] shadow-lg scale-105"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                <Image
-                  src="/images/united-states.png"
-                  alt="USA"
-                  width={24}
-                  height={24}
-                  className="rounded-full"
-                />
-                Dólar
-              </button>
-            </div>
+            <Tabs
+              value={currency}
+              onValueChange={(value) => setCurrency(value as "USD" | "BRL")}
+              className="w-auto"
+            >
+              <TabsList className="bg-white/20 backdrop-blur-md border border-white/30 h-auto p-1.5 rounded-full">
+                <TabsTrigger
+                  value="BRL"
+                  className="px-6 py-3 rounded-full font-bold data-[state=active]:bg-white data-[state=active]:text-[#892ba4] data-[state=active]:shadow-lg text-white hover:bg-white/10 flex items-center gap-3 transition-all duration-75"
+                >
+                  <Image
+                    src="/images/brazil-.png"
+                    alt="Brasil"
+                    width={24}
+                    height={24}
+                    className="rounded-full"
+                  />
+                  Real
+                </TabsTrigger>
+                <TabsTrigger
+                  value="USD"
+                  className="px-6 py-3 rounded-full font-bold data-[state=active]:bg-white data-[state=active]:text-[#892ba4] data-[state=active]:shadow-lg text-white hover:bg-white/10 flex items-center gap-3 transition-all duration-75"
+                >
+                  <Image
+                    src="/images/united-states.png"
+                    alt="USA"
+                    width={24}
+                    height={24}
+                    className="rounded-full"
+                  />
+                  Dólar
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
             <p className="text-white/70 text-sm font-medium">
               Cotação: US$ 1.00 = R$ {exchangeRate.toFixed(2)}
             </p>
@@ -251,7 +259,7 @@ export default function PricingSection() {
                     </div>
                     <div className="border-t border-white/20 pt-6">
                       <div className="text-5xl font-black text-white mb-2 font-mono">
-                        {formatPrice(card.priceUSD)}
+                        {formatPrice(card.id)}
                       </div>
                       <p className="text-white/60 text-sm font-medium">
                         {card.unit}
@@ -297,7 +305,7 @@ export default function PricingSection() {
                       </div>
                       <div className="border-t border-white/20 pt-4">
                         <div className="text-3xl font-black text-white mb-1 font-mono">
-                          {formatPrice(card.priceUSD)}
+                          {formatPrice(card.id)}
                         </div>
                         <p className="text-white/60 text-xs font-medium">
                           {card.unitMobile}
