@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 
 import { ArrowRight } from "lucide-react";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
@@ -8,7 +7,7 @@ import { motion } from "framer-motion";
 export default function EndSection() {
   return (
     <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-white">
-      <div className="container mx-auto px-6 relative">
+      <div className="container mx-auto px-0 lg:px-6 relative">
         {/* 4 Linhas - vão de ponta a ponta mas respeitam a altura do container */}
         <div className="absolute left-[-100vw] right-[-100vw] top-0 h-px bg-gray-200" />
         <div className="absolute left-[-100vw] right-[-100vw] bottom-0 h-px bg-gray-200" />
@@ -171,8 +170,8 @@ export default function EndSection() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto relative">
-          <div className="bg-gradient-to-br from-[#892ba4] via-[#7a2693] to-[#6d2282] relative overflow-hidden shadow-sm">
+        <div className="w-full lg:max-w-7xl lg:mx-auto relative">
+          <div className="bg-primary relative overflow-hidden shadow-sm">
             <div className="absolute inset-0 pointer-events-none">
               <FlickeringGrid
                 className="absolute inset-0"
@@ -185,7 +184,7 @@ export default function EndSection() {
             </div>
 
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 p-8 md:p-12 lg:p-16 xl:p-20 relative">
-              <div className="flex-1 space-y-6 md:space-y-8 text-white max-w-2xl text-center lg:text-left">
+              <div className="flex-1 space-y-6 md:space-y-8 text-white w-full lg:max-w-2xl  lg:text-left">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium leading-tight text-heading">
                   Você chegou ao{" "}
                   <span className="relative inline-block text-white italic font-semibold">
