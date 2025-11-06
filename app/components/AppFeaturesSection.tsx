@@ -105,7 +105,7 @@ export default function AppFeaturesSection() {
       <div className="absolute inset-0 pointer-events-none">
         {/* Arc connecting from previous section - top left */}
         <svg
-          className="absolute -top-20 -left-20 w-40 h-40 text-[#892ba4]/10"
+          className="absolute -top-20 -left-20 w-40 h-40 text-primary/10"
           viewBox="0 0 100 100"
         >
           <path
@@ -120,16 +120,13 @@ export default function AppFeaturesSection() {
         <div className="absolute top-1/4 -left-40 w-80 h-80 border-2 border-purple-200/30 rounded-full"></div>
 
         {/* Small accent circles - right side */}
-        <div className="absolute top-20 right-20 w-4 h-4 bg-[#892ba4]/20 rounded-full"></div>
+        <div className="absolute top-20 right-20 w-4 h-4 bg-primary/20 rounded-full"></div>
         <div className="absolute top-32 right-32 w-3 h-3 bg-purple-400/20 rounded-full"></div>
 
         {/* Dot grid pattern - bottom right */}
         <div className="absolute bottom-20 right-10 grid grid-cols-4 gap-3 opacity-20">
           {Array.from({ length: 16 }).map((_, i) => (
-            <div
-              key={i}
-              className="w-1.5 h-1.5 bg-[#892ba4] rounded-full"
-            ></div>
+            <div key={i} className="w-1.5 h-1.5 bg-primary rounded-full"></div>
           ))}
         </div>
 
@@ -168,7 +165,7 @@ export default function AppFeaturesSection() {
           <div className="flex items-center justify-center lg:justify-start">
             <div ref={iphoneRef} className="relative">
               {/* Decorative Background */}
-              <div className="absolute -inset-8 bg-linear-to-br from-[#892ba4] to-purple-600 rounded-3xl blur-3xl opacity-20"></div>
+              <div className="absolute -inset-8 bg-linear-to-br from-primary to-purple-600 rounded-3xl blur-3xl opacity-20"></div>
 
               {/* iPhone 15 Mockup */}
               <div className="relative">
@@ -204,9 +201,9 @@ export default function AppFeaturesSection() {
                     >
                       <source src="/videos/app-demo.mp4" type="video/mp4" />
                       {/* Fallback */}
-                      <div className="w-full h-full bg-linear-to-br from-[#892ba4]/10 to-purple-100 flex items-center justify-center">
+                      <div className="w-full h-full bg-linear-to-br from-primary/10 to-purple-100 flex items-center justify-center">
                         <div className="text-center p-8">
-                          <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-[#892ba4] flex items-center justify-center">
+                          <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center">
                             <Package size={40} className="text-white" />
                           </div>
                           <p className="text-sm font-semibold text-gray-700">
@@ -235,15 +232,15 @@ export default function AppFeaturesSection() {
           <div ref={contentRef} className="space-y-8">
             {/* Badge */}
             <div className="app-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-purple-200 shadow-sm">
-              <Sparkles size={16} className="text-[#892ba4]" />
-              <span className="text-sm font-medium text-[#892ba4]">
+              <Sparkles size={16} className="text-primary" />
+              <span className="text-sm font-medium text-primary">
                 Aplicativo Inteligente
               </span>
             </div>
 
             {/* Title */}
             <div className="space-y-4">
-              <h2 className="app-title text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
+              <h2 className="app-title text-4xl md:text-5xl lg:text-6xl font-bold text-heading leading-tight">
                 <span className="relative inline-block">
                   Controle Total
                   <svg
@@ -261,11 +258,12 @@ export default function AppFeaturesSection() {
                     />
                   </svg>
                 </span>{" "}
-                na <span className="text-[#892ba4]">Palma da Mão</span>
+                na{" "}
+                <span className="text-primary shine-effect">Palma da Mão</span>
               </h2>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                 Aplicativo mobile{" "}
-                <span className="relative inline-block font-semibold text-black">
+                <span className="relative inline-block font-semibold text-heading">
                   revolucionário
                   <svg
                     className="absolute -bottom-1 left-0 w-full"
@@ -283,7 +281,7 @@ export default function AppFeaturesSection() {
                   </svg>
                 </span>{" "}
                 que transforma a gestão do almoxarifado com recursos de{" "}
-                <span className="relative inline-block font-semibold text-black">
+                <span className="relative inline-block font-semibold text-heading">
                   Inteligência Artificial
                   <svg
                     className="absolute -bottom-1 left-0 w-full"
@@ -309,9 +307,9 @@ export default function AppFeaturesSection() {
               {/* Feature 1 */}
               <div className="app-feature-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
                 <div className="feature-icon h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
-                  <Mic size={24} className="text-[#892ba4]" />
+                  <Mic size={24} className="text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-black mb-2">
+                <h3 className="text-lg font-semibold text-heading mb-2">
                   Lançamentos por Voz
                 </h3>
                 <p className="text-sm text-gray-600">
@@ -322,9 +320,9 @@ export default function AppFeaturesSection() {
               {/* Feature 2 */}
               <div className="app-feature-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
                 <div className="feature-icon h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
-                  <Camera size={24} className="text-[#892ba4]" />
+                  <Camera size={24} className="text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-black mb-2">
+                <h3 className="text-lg font-semibold text-heading mb-2">
                   Análise de Foto por IA
                 </h3>
                 <p className="text-sm text-gray-600">
@@ -335,9 +333,9 @@ export default function AppFeaturesSection() {
               {/* Feature 3 */}
               <div className="app-feature-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
                 <div className="feature-icon h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
-                  <Brain size={24} className="text-[#892ba4]" />
+                  <Brain size={24} className="text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-black mb-2">
+                <h3 className="text-lg font-semibold text-heading mb-2">
                   Assistente Virtual
                 </h3>
                 <p className="text-sm text-gray-600">
@@ -348,9 +346,9 @@ export default function AppFeaturesSection() {
               {/* Feature 4 */}
               <div className="app-feature-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow min-w-[280px] sm:min-w-0">
                 <div className="feature-icon h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
-                  <Package size={24} className="text-[#892ba4]" />
+                  <Package size={24} className="text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-black mb-2">
+                <h3 className="text-lg font-semibold text-heading mb-2">
                   Acesso Total ao Estoque
                 </h3>
                 <p className="text-sm text-gray-600">

@@ -119,19 +119,19 @@ export default function FoundersSection() {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-medium text-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-medium text-heading mb-4">
             Nosso{" "}
             <span
-              className="bg-[#892ba4] font-bold text-white px-6 py-2 inline-block"
+              className="bg-primary font-bold text-white px-6 py-2 inline-block"
               style={{ clipPath: "polygon(0 20%, 100% 0%, 100% 100%, 0 80%)" }}
             >
               time
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Conheça a <span className="font-bold text-[#892ba4]">equipe</span>{" "}
-            por trás do desenvolvimento da solução{" "}
-            <span className="font-extrabold text-[#892ba4]">MAX</span>
+            Conheça a <span className="font-bold text-primary">equipe</span> por
+            trás do desenvolvimento da solução{" "}
+            <span className="font-extrabold text-primary">MAX</span>
           </p>
         </div>
 
@@ -143,13 +143,13 @@ export default function FoundersSection() {
           {founders.map((founder, index) => (
             <div
               key={index}
-              className="founder-card bg-white border-2 border-[#892ba4] rounded-2xl relative overflow-visible p-8 shadow-lg hover:shadow-xl transition-shadow min-w-[280px] shrink-0"
+              className="founder-card bg-white border-2 border-primary rounded-2xl relative overflow-visible p-8 shadow-lg hover:shadow-xl transition-shadow min-w-[280px] shrink-0"
             >
               <div className="founder-badge absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-purple-400 text-white flex items-center justify-center text-sm font-semibold ">
                 <User2 />
               </div>
-              <div className="founder-wave absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 h-4 w-30 rounded-full bg-[#892ba4] text-white flex items-center justify-center"></div>
-              <div className="founder-wave absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 h-2 w-48 rounded-full bg-[#892ba4] text-white flex items-center justify-center"></div>
+              <div className="founder-wave absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 h-4 w-30 rounded-full bg-primary text-white flex items-center justify-center"></div>
+              <div className="founder-wave absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 h-2 w-48 rounded-full bg-primary text-white flex items-center justify-center"></div>
               {/* Avatar */}
               <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gray-200">
                 <Image
@@ -162,7 +162,7 @@ export default function FoundersSection() {
               </div>
 
               {/* Name */}
-              <h3 className="text-xl font-bold text-black text-center mb-2">
+              <h3 className="text-xl font-bold text-heading text-center mb-2">
                 {founder.name}
               </h3>
 
@@ -178,7 +178,7 @@ export default function FoundersSection() {
                   href={founder.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-10 w-10 rounded-xl bg-purple-100 flex items-center justify-center hover:bg-[#892ba4] hover:text-white transition-colors text-[#892ba4]"
+                  className="h-10 w-10 rounded-xl bg-purple-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-primary"
                   aria-label={`LinkedIn de ${founder.name}`}
                 >
                   <Linkedin size={20} />
@@ -187,7 +187,7 @@ export default function FoundersSection() {
                   href={founder.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-10 w-10 rounded-xl bg-purple-100 flex items-center justify-center hover:bg-[#892ba4] hover:text-white transition-colors text-[#892ba4]"
+                  className="h-10 w-10 rounded-xl bg-purple-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-primary"
                   aria-label={`GitHub de ${founder.name}`}
                 >
                   <Github size={20} />

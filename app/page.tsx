@@ -3,7 +3,9 @@ import HeroSection from "./components/HeroSection";
 import AppFeaturesSection from "./components/AppFeaturesSection";
 import DashboardSection from "./components/DashboardSection";
 import DasaSection from "./components/DasaSection";
+import PricingSection from "./components/PricingSection";
 import FoundersSection from "./components/FoundersSection";
+import EndSection from "./components/EndSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -15,7 +17,9 @@ export default function Home() {
         <AppFeaturesSection />
         <DashboardSection />
         <DasaSection />
+        <PricingSection />
         <FoundersSection />
+        <EndSection />
       </main>
       <Footer />
     </div>

@@ -104,7 +104,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-black hover:text-[#892ba4] transition-colors font-medium"
+                className="text-heading hover:text-primary transition-colors font-medium"
               >
                 {link.label}
               </a>
@@ -114,7 +114,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             ref={menuIconRef}
-            className="md:hidden text-black hover:text-[#892ba4] transition-colors"
+            className="md:hidden text-heading hover:text-primary transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -134,7 +134,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="text-black hover:text-[#892ba4] transition-colors font-medium py-2"
+                  className="text-heading hover:text-primary transition-colors font-medium py-2"
                 >
                   {link.label}
                 </a>

@@ -26,12 +26,12 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-black font-semibold mb-4">Links Rápidos</h3>
+            <h3 className="text-heading font-semibold mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#sobre"
-                  className="text-gray-600 hover:text-[#892ba4] transition-colors"
+                  className="text-gray-600 hover:text-primary transition-colors"
                 >
                   Sobre
                 </a>
@@ -39,7 +39,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#features"
-                  className="text-gray-600 hover:text-[#892ba4] transition-colors"
+                  className="text-gray-600 hover:text-primary transition-colors"
                 >
                   Features
                 </a>
@@ -47,7 +47,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#integrantes"
-                  className="text-gray-600 hover:text-[#892ba4] transition-colors"
+                  className="text-gray-600 hover:text-primary transition-colors"
                 >
                   Integrantes
                 </a>
@@ -55,7 +55,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#contato"
-                  className="text-gray-600 hover:text-[#892ba4] transition-colors"
+                  className="text-gray-600 hover:text-primary transition-colors"
                 >
                   Contato
                 </a>
@@ -65,24 +65,24 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-black font-semibold mb-4">Contato</h3>
+            <h3 className="text-heading font-semibold mb-4">Contato</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-gray-600">
-                <Mail size={18} className="mt-0.5 text-[#892ba4]" />
+                <Mail size={18} className="mt-0.5 text-primary" />
                 <a
                   href="mailto:maxsolutionsai@gmail.com"
-                  className="text-sm hover:text-[#892ba4] transition-colors"
+                  className="text-sm hover:text-primary transition-colors"
                 >
                   maxsolutionsai@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-gray-600">
-                <Instagram size={18} className="mt-0.5 text-[#892ba4]" />
+                <Instagram size={18} className="mt-0.5 text-primary" />
                 <a
                   href="https://instagram.com/maxsolutions_ai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm hover:text-[#892ba4] transition-colors"
+                  className="text-sm hover:text-primary transition-colors"
                 >
                   @maxsolutions_ai
                 </a>

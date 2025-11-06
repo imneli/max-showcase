@@ -144,13 +144,13 @@ export default function DasaSection() {
       {/* Decorative Elements with Parallax */}
       <div ref={parallaxRef} className="absolute inset-0 pointer-events-none">
         {/* Floating circles with parallax */}
-        <div className="parallax-circle absolute top-20 -right-20 w-64 h-64 border-2 border-[#892ba4]/20 rounded-full"></div>
+        <div className="parallax-circle absolute top-20 -right-20 w-64 h-64 border-2 border-primary/20 rounded-full"></div>
         <div className="parallax-circle absolute bottom-40 -left-32 w-80 h-80 border-2 border-purple-300/20 rounded-full"></div>
         <div className="parallax-circle absolute top-1/2 left-1/4 w-40 h-40 border border-purple-200/30 rounded-full"></div>
 
         {/* Gradient blobs */}
-        <div className="absolute top-10 left-10 w-96 h-96 bg-linear-to-br from-[#892ba4]/5 to-purple-400/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-linear-to-tl from-purple-300/5 to-[#892ba4]/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-96 h-96 bg-linear-to-br from-primary/5 to-purple-400/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-linear-to-tl from-purple-300/5 to-primary/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -172,19 +172,19 @@ export default function DasaSection() {
           <div ref={contentRef} className="space-y-6 lg:flex-1">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-200">
-                <Building2 size={16} className="text-[#892ba4]" />
-                <span className="text-sm font-medium text-[#892ba4]">
+                <Building2 size={16} className="text-primary" />
+                <span className="text-sm font-medium text-primary">
                   Projeto Empresarial
                 </span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-black">
+              <h2 className="text-4xl md:text-5xl font-bold text-heading">
                 Parceria com a{" "}
                 <a
                   href="https://dasa.com.br/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#892ba4] hover:text-[#6d2282] transition-colors"
+                  className="text-primary hover:text-primary-dark transition-colors"
                 >
                   DASA
                 </a>
@@ -234,10 +234,12 @@ export default function DasaSection() {
 
             <div className="problem-card flex items-start gap-4 p-4 bg-purple-50 rounded-xl border border-purple-100">
               <div className="problem-icon h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
-                <Package size={20} className="text-[#892ba4]" />
+                <Package size={20} className="text-primary" />
               </div>
               <div>
-                <h4 className="font-semibold text-black mb-1">Nossa Solução</h4>
+                <h4 className="font-semibold text-heading mb-1">
+                  Nossa Solução
+                </h4>
                 <p className="text-sm text-gray-600">
                   Sistema inteligente com IA e integração SAP para automatização
                   completa
@@ -253,7 +255,7 @@ export default function DasaSection() {
         <div
           className="flex whitespace-nowrap text-[100px] font-black"
           style={{
-            WebkitTextStroke: "2px #892ba4",
+            WebkitTextStroke: "2px var(--primary)",
             color: "transparent",
           }}
         >

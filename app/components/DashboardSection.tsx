@@ -150,15 +150,15 @@ export default function DashboardSection() {
           <div ref={contentRef} className="space-y-8 order-2 lg:order-1">
             {/* Badge */}
             <div className="content-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-200">
-              <BarChart3 size={16} className="text-[#892ba4]" />
-              <span className="text-sm font-medium text-[#892ba4]">
+              <BarChart3 size={16} className="text-primary" />
+              <span className="text-sm font-medium text-primary">
                 Dashboard Inteligente
               </span>
             </div>
 
             {/* Title */}
             <div className="space-y-4">
-              <h2 className="content-title text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
+              <h2 className="content-title text-4xl md:text-5xl lg:text-6xl font-bold text-heading leading-tight">
                 <span className="relative inline-block">
                   Gestão Completa
                   <svg
@@ -176,11 +176,11 @@ export default function DashboardSection() {
                     />
                   </svg>
                 </span>{" "}
-                em <span className="text-[#892ba4]">Tempo Real</span>
+                em <span className="text-primary shine-effect">Tempo Real</span>
               </h2>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                 Dashboard{" "}
-                <span className="relative inline-block font-semibold text-black">
+                <span className="relative inline-block font-semibold text-heading">
                   poderosa
                   <svg
                     className="absolute -bottom-1 left-0 w-full"
@@ -241,10 +241,10 @@ export default function DashboardSection() {
             <div className="space-y-4">
               <div className="feature-card flex items-start gap-3">
                 <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
-                  <MessageSquare size={20} className="text-[#892ba4]" />
+                  <MessageSquare size={20} className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black mb-1">
+                  <h3 className="font-semibold text-heading mb-1">
                     Chatbot com Acesso Total
                   </h3>
                   <p className="text-sm text-gray-600">
@@ -256,10 +256,10 @@ export default function DashboardSection() {
 
               <div className="feature-card flex items-start gap-3">
                 <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
-                  <Package size={20} className="text-[#892ba4]" />
+                  <Package size={20} className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black mb-1">
+                  <h3 className="font-semibold text-heading mb-1">
                     Visualização Completa de Produtos
                   </h3>
                   <p className="text-sm text-gray-600">
@@ -271,10 +271,10 @@ export default function DashboardSection() {
 
               <div className="feature-card flex items-start gap-3">
                 <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
-                  <Database size={20} className="text-[#892ba4]" />
+                  <Database size={20} className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black mb-1">
+                  <h3 className="font-semibold text-heading mb-1">
                     Integração Nativa com SAP
                   </h3>
                   <p className="text-sm text-gray-600">
@@ -286,10 +286,10 @@ export default function DashboardSection() {
 
               <div className="feature-card flex items-start gap-3">
                 <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
-                  <TrendingUp size={20} className="text-[#892ba4]" />
+                  <TrendingUp size={20} className="text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black mb-1">
+                  <h3 className="font-semibold text-heading mb-1">
                     Analytics e Relatórios
                   </h3>
                   <p className="text-sm text-gray-600">
@@ -308,7 +308,7 @@ export default function DashboardSection() {
               className="relative w-full max-w-[640px] px-4 md:px-6"
             >
               {/* Decorative Background */}
-              <div className="absolute -inset-4 lg:-inset-8 bg-linear-to-br from-[#892ba4] to-purple-600 rounded-3xl blur-2xl opacity-10"></div>
+              <div className="absolute -inset-4 lg:-inset-8 bg-linear-to-br from-primary to-purple-600 rounded-3xl blur-2xl opacity-10"></div>
 
               {/* MacBook Mockup */}
               <div className="relative w-full">
@@ -347,21 +347,21 @@ export default function DashboardSection() {
                             <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
                               <BarChart3
                                 size={24}
-                                className="text-[#892ba4] mb-2"
+                                className="text-primary mb-2"
                               />
                               <p className="text-xs text-gray-600">Analytics</p>
                             </div>
                             <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
                               <Package
                                 size={24}
-                                className="text-[#892ba4] mb-2"
+                                className="text-primary mb-2"
                               />
                               <p className="text-xs text-gray-600">Produtos</p>
                             </div>
                             <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
                               <MessageSquare
                                 size={24}
-                                className="text-[#892ba4] mb-2"
+                                className="text-primary mb-2"
                               />
                               <p className="text-xs text-gray-600">Chatbot</p>
                             </div>
@@ -370,7 +370,7 @@ export default function DashboardSection() {
                             <div className="text-center">
                               <Zap
                                 size={32}
-                                className="text-[#892ba4] mx-auto mb-2"
+                                className="text-primary mx-auto mb-2"
                               />
                               <p className="text-sm font-semibold text-gray-700">
                                 Dashboard MAX

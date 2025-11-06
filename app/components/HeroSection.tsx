@@ -93,7 +93,7 @@ export default function HeroSection() {
         {/* Grid Dots Pattern - Top Left (Desktop only) */}
         <div className="hidden lg:grid absolute top-20 left-10 grid-cols-4 gap-3 opacity-30">
           {[...Array(16)].map((_, i) => (
-            <div key={i} className="w-2 h-2 rounded-full bg-[#892ba4]"></div>
+            <div key={i} className="w-2 h-2 rounded-full bg-primary"></div>
           ))}
         </div>
 
@@ -128,8 +128,8 @@ export default function HeroSection() {
               ref={badgeRef}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-200"
             >
-              <Sparkles size={16} className="text-[#892ba4]" />
-              <span className="text-sm font-medium text-[#892ba4]">
+              <Sparkles size={16} className="text-primary" />
+              <span className="text-sm font-medium text-primary">
                 Nossa Solução!
               </span>
             </div>
@@ -140,13 +140,13 @@ export default function HeroSection() {
                 ref={titleRef}
                 className="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tight"
               >
-                <span className="text-[#892ba4]">MAX</span>
+                <span className="text-primary shine-effect">MAX</span>
               </h1>
               <div className="hero-text inline-block">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-black">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-heading">
                   Festival{" "}
                   <span
-                    className="inline-block px-4 py-1 bg-[#892ba4] text-white font-bold"
+                    className="inline-block px-4 py-1 bg-primary text-white font-bold"
                     style={{
                       clipPath: "polygon(0 20%, 100% 0%, 100% 100%, 0 80%)",
                     }}
@@ -169,25 +169,25 @@ export default function HeroSection() {
             <div className="space-y-4">
               <div className="feature-item flex items-center gap-3">
                 <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center">
-                  <Zap size={16} className="text-[#892ba4]" />
+                  <Zap size={16} className="text-primary" />
                 </div>
-                <span className="text-black font-medium">
+                <span className="text-heading font-medium">
                   Integração nativa com SAP
                 </span>
               </div>
               <div className="feature-item flex items-center gap-3">
                 <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center">
-                  <Sparkles size={16} className="text-[#892ba4]" />
+                  <Sparkles size={16} className="text-primary" />
                 </div>
-                <span className="text-black font-medium">
+                <span className="text-heading font-medium">
                   IA para lançamentos automáticos
                 </span>
               </div>
               <div className="feature-item flex items-center gap-3">
                 <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center">
-                  <ArrowRight size={16} className="text-[#892ba4]" />
+                  <ArrowRight size={16} className="text-primary" />
                 </div>
-                <span className="text-black font-medium">
+                <span className="text-heading font-medium">
                   Gestão inteligente de estoque
                 </span>
               </div>
@@ -199,7 +199,7 @@ export default function HeroSection() {
                 href="https://instagram.com/maxsolutions_ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative px-8 py-4 bg-[#892ba4] text-white rounded-lg font-semibold overflow-hidden transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-purple-300/50 hover:shadow-xl hover:shadow-purple-400/60 hover:scale-105 hover:-translate-y-1"
+                className="group relative px-8 py-4 bg-primary text-white rounded-lg font-semibold overflow-hidden transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-purple-300/50 hover:shadow-xl hover:shadow-purple-400/60 hover:scale-105 hover:-translate-y-1"
               >
                 Começar Agora
                 <ArrowRight size={20} />
@@ -208,10 +208,10 @@ export default function HeroSection() {
                 href="https://instagram.com/maxsolutions_ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative px-8 py-4 bg-white text-black border-2 border-black rounded-lg font-semibold text-center transition-all duration-300 hover:bg-black hover:text-white hover:scale-105 hover:-translate-y-1 hover:shadow-lg overflow-hidden"
+                className="group relative px-8 py-4 bg-white text-heading border-2 border-heading rounded-lg font-semibold text-center transition-all duration-300 hover:bg-heading hover:text-white hover:scale-105 hover:-translate-y-1 hover:shadow-lg overflow-hidden"
               >
                 <span className="relative z-10">Saber Mais</span>
-                <span className="absolute inset-0 w-0 h-full bg-black transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute inset-0 w-0 h-full bg-heading transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
           </div>
@@ -220,13 +220,13 @@ export default function HeroSection() {
           <div className="hidden lg:flex items-center justify-center lg:justify-end">
             <div ref={qrRef} className="relative">
               {/* Decorative Background */}
-              <div className="absolute -inset-4 bg-linear-to-br from-[#892ba4]/5 to-purple-600/5 rounded-3xl blur-xl"></div>
+              <div className="absolute -inset-4 bg-linear-to-br from-primary/5 to-purple-600/5 rounded-3xl blur-xl"></div>
 
               {/* QR Code Container */}
               <div className="relative p-10 rounded-2xl">
                 {/* Badge no Topo */}
                 <div className="absolute top-8 left-1/2 -translate-x-1/2 z-10">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#892ba4] shadow-md">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary shadow-md">
                     <span className="text-[12px] font-semibold text-white tracking-wide">
                       ESCANEIE PARA ACESSAR
                     </span>
