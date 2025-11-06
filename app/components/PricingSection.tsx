@@ -103,7 +103,7 @@ export default function PricingSection() {
   };
 
   return (
-    <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-[#892ba4]">
+    <section className="relative py-12 md:py-26 lg:py-16 overflow-hidden bg-[#892ba4]">
       {/* DottedMap Background */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <DottedMap dotRadius={0.4} className="w-full h-full *:fill-white" />
