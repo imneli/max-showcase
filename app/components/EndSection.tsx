@@ -2,7 +2,6 @@
 
 import { ArrowRight } from "lucide-react";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
-import { motion } from "framer-motion";
 
 export default function EndSection() {
   return (
@@ -195,20 +194,13 @@ export default function EndSection() {
                       xmlns="http://www.w3.org/2000/svg"
                       preserveAspectRatio="none"
                     >
-                      <motion.path
+                      <path
                         d="M2,6 Q20,3 40,6 T80,6 Q100,4 120,6 T160,6 Q180,4 198,6"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{
-                          duration: 1.2,
-                          ease: "easeInOut",
-                          delay: 0.3,
-                        }}
                       />
                     </svg>
                   </span>{" "}

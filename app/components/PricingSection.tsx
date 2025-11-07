@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { DottedMap } from "@/components/ui/dotted-map";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -113,73 +112,25 @@ export default function PricingSection() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
-            >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Hospitais perdem{" "}
               <span className="relative inline-block text-red-300">
                 até 30% do inventário
-                {/* Linha grifada animada */}
-                <svg
-                  className="absolute -bottom-2 left-0 w-full h-3"
-                  viewBox="0 0 300 8"
-                  fill="none"
-                  preserveAspectRatio="none"
-                >
-                  <motion.path
-                    d="M2,4 Q75,1 150,4 T298,4"
-                    stroke="#fca5a5"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    fill="none"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
-                    viewport={{ once: true }}
-                  />
-                </svg>
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-red-300 rounded-full"></span>
               </span>{" "}
               anualmente.
               <br />
               Com IA, você paga apenas{" "}
               <span className="relative inline-block text-green-300">
                 centavos por operação
-                {/* Linha grifada animada */}
-                <svg
-                  className="absolute -bottom-2 left-0 w-full h-3"
-                  viewBox="0 0 300 8"
-                  fill="none"
-                  preserveAspectRatio="none"
-                >
-                  <motion.path
-                    d="M2,4 Q75,1 150,4 T298,4"
-                    stroke="#86efac"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    fill="none"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    transition={{ duration: 1, ease: "easeInOut", delay: 0.7 }}
-                    viewport={{ once: true }}
-                  />
-                </svg>
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-green-300 rounded-full"></span>
               </span>
               .
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-white/90 text-base md:text-lg max-w-3xl mx-auto"
-            >
+            </h2>
+            <p className="text-white/90 text-base md:text-lg max-w-3xl mx-auto">
               Enquanto perdas custam milhões, nossa plataforma processa tudo por
               frações de centavo.
-            </motion.p>
+            </p>
           </div>
 
           {/* Currency Toggle with Flags */}
@@ -319,13 +270,7 @@ export default function PricingSection() {
           </div>
 
           {/* Stats Comparison - Otimizado para Mobile e Desktop */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/30 mb-12"
-          >
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/30 mb-12">
             {/* Desktop Layout */}
             <div className="hidden md:grid md:grid-cols-2 gap-8">
               <div className="text-left">
@@ -376,7 +321,7 @@ export default function PricingSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

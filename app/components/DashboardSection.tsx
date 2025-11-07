@@ -8,83 +8,12 @@ import {
   Zap,
   TrendingUp,
 } from "lucide-react";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from "react";
 
 export default function DashboardSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const macbookRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // MacBook com entrada 3D dramática
-      gsap.from(macbookRef.current, {
-        scrollTrigger: {
-          trigger: macbookRef.current,
-          start: "top 80%",
-          end: "center center",
-          toggleActions: "play none none reverse",
-        },
-        x: 200,
-        rotationY: 45,
-        opacity: 0,
-        scale: 0.8,
-        duration: 1.2,
-        ease: "power3.out",
-      });
-
-      // Parallax sutil no MacBook ao scroll
-      gsap.to(macbookRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
-        y: -50,
-        ease: "none",
-      });
-
-      // Animação do badge e título
-      gsap.from(
-        contentRef.current?.querySelectorAll(
-          ".content-badge, .content-title"
-        ) || [],
-        {
-          scrollTrigger: {
-            trigger: contentRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-          x: -100,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
-      );
-
-      // Features com animação stagger e bounce
-      gsap.from(contentRef.current?.querySelectorAll(".feature-card") || [], {
-        scrollTrigger: {
-          trigger: contentRef.current,
-          start: "top 70%",
-          toggleActions: "play none none reverse",
-        },
-        x: -80,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "back.out(1.3)",
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section

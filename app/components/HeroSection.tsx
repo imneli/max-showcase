@@ -2,8 +2,7 @@
 
 import { ArrowRight, Sparkles, Zap } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useRef } from "react";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -11,72 +10,6 @@ export default function HeroSection() {
   const qrRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Animação do badge inicial
-      gsap.from(badgeRef.current, {
-        y: -50,
-        opacity: 0,
-        duration: 0.8,
-        ease: "back.out(1.7)",
-      });
-
-      // Animação explosiva do título MAX
-      if (titleRef.current) {
-        gsap.from(titleRef.current, {
-          scale: 0.5,
-          opacity: 0,
-          duration: 1,
-          ease: "elastic.out(1, 0.5)",
-          delay: 0.3,
-        });
-      }
-
-      // Animação do subtítulo e descrição
-      gsap.from(".hero-text", {
-        x: -100,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-        delay: 0.5,
-      });
-
-      // Animação das features com bounce
-      gsap.from(".feature-item", {
-        x: -50,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "back.out(1.5)",
-        delay: 0.8,
-      });
-
-      // Animação dos botões CTA
-      gsap.from(ctaRef.current?.children || [], {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: "power2.out",
-        delay: 1.2,
-      });
-
-      // QR Code com animação de entrada sutil
-      if (qrRef.current) {
-        gsap.from(qrRef.current, {
-          scale: 0.8,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          delay: 0.6,
-        });
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section

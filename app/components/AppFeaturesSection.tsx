@@ -2,98 +2,12 @@
 
 import { Mic, Camera, Package, Sparkles, Brain } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from "react";
 
 export default function AppFeaturesSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const iphoneRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // iPhone com entrada lateral e scale
-      gsap.from(iphoneRef.current, {
-        scrollTrigger: {
-          trigger: iphoneRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-        x: -150,
-        opacity: 0,
-        scale: 0.9,
-        rotation: -5,
-        duration: 1,
-        ease: "power3.out",
-      });
-
-      // Parallax sutil no iPhone
-      gsap.to(iphoneRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
-        y: -30,
-        ease: "none",
-      });
-
-      // Badge e título
-      gsap.from(
-        contentRef.current?.querySelectorAll(".app-badge, .app-title") || [],
-        {
-          scrollTrigger: {
-            trigger: contentRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-          x: 100,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
-        }
-      );
-
-      // Feature cards com stagger e bounce
-      gsap.from(
-        contentRef.current?.querySelectorAll(".app-feature-card") || [],
-        {
-          scrollTrigger: {
-            trigger: contentRef.current,
-            start: "top 70%",
-            toggleActions: "play none none reverse",
-          },
-          y: 60,
-          opacity: 0,
-          scale: 0.9,
-          duration: 0.7,
-          stagger: 0.1,
-          ease: "back.out(1.4)",
-        }
-      );
-
-      // Animação nos ícones das features
-      gsap.from(contentRef.current?.querySelectorAll(".feature-icon") || [], {
-        scrollTrigger: {
-          trigger: contentRef.current,
-          start: "top 70%",
-          toggleActions: "play none none reverse",
-        },
-        scale: 0,
-        rotation: 180,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "back.out(2)",
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section

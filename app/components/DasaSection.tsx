@@ -2,11 +2,7 @@
 
 import { Building2, TrendingDown, Package, AlertTriangle } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from "react";
 
 export default function DasaSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -14,127 +10,6 @@ export default function DasaSection() {
   const contentRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const parallaxRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Logo DASA com entrada sutil e parallax
-      if (logoRef.current) {
-        gsap.from(logoRef.current, {
-          scrollTrigger: {
-            trigger: logoRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-          scale: 0.9,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-        });
-
-        // Parallax no logo
-        gsap.to(logoRef.current, {
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-          },
-          y: -50,
-          ease: "none",
-        });
-      }
-
-      // Conteúdo da esquerda com parallax
-      gsap.from(contentRef.current?.children || [], {
-        scrollTrigger: {
-          trigger: contentRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-        x: -100,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out",
-      });
-
-      // Parallax no conteúdo
-      gsap.to(contentRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.5,
-        },
-        y: -30,
-        ease: "none",
-      });
-
-      // Cards de problema com bounce e cores
-      const cards = cardsRef.current?.querySelectorAll(".problem-card");
-      gsap.from(cards || [], {
-        scrollTrigger: {
-          trigger: cardsRef.current,
-          start: "top 75%",
-          toggleActions: "play none none reverse",
-        },
-        x: 100,
-        opacity: 0,
-        scale: 0.9,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "back.out(1.5)",
-      });
-
-      // Parallax nos cards (mais rápido)
-      gsap.to(cardsRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.8,
-        },
-        y: 50,
-        ease: "none",
-      });
-
-      // Animação de shake nos ícones de problema ao aparecer
-      gsap.from(cardsRef.current?.querySelectorAll(".problem-icon") || [], {
-        scrollTrigger: {
-          trigger: cardsRef.current,
-          start: "top 75%",
-          toggleActions: "play none none reverse",
-        },
-        rotation: -10,
-        duration: 0.3,
-        stagger: 0.15,
-        ease: "elastic.out(2, 0.3)",
-        repeat: 3,
-        yoyo: true,
-      });
-
-      // Parallax nos elementos decorativos
-      if (parallaxRef.current) {
-        const circles =
-          parallaxRef.current.querySelectorAll(".parallax-circle");
-        circles.forEach((circle, index) => {
-          gsap.to(circle, {
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 1 + index * 0.5,
-            },
-            y: -80 - index * 30,
-            rotation: 360,
-            ease: "none",
-          });
-        });
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section
