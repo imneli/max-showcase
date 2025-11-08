@@ -9,6 +9,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function DashboardSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -257,61 +258,14 @@ export default function DashboardSection() {
                     style={{ aspectRatio: "16/10" }}
                   >
                     {/* Video Container */}
-                    <video
+                    <Image
+                      src="/images/dash.png"
+                      alt="MAX Dashboard Interface"
+                      width={1600}
+                      height={1000}
                       className="w-full h-full object-cover"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    >
-                      <source
-                        src="/videos/dashboard-demo.mp4"
-                        type="video/mp4"
-                      />
-                      {/* Fallback */}
-                      <div className="w-full h-full bg-linear-to-br from-gray-50 to-gray-100 flex items-center justify-center p-8">
-                        <div className="text-center space-y-6 max-w-md">
-                          {/* Mock Dashboard Elements */}
-                          <div className="flex items-center justify-between gap-4 mb-6">
-                            <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                              <BarChart3
-                                size={24}
-                                className="text-primary mb-2"
-                              />
-                              <p className="text-xs text-gray-600">Analytics</p>
-                            </div>
-                            <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                              <Package
-                                size={24}
-                                className="text-primary mb-2"
-                              />
-                              <p className="text-xs text-gray-600">Produtos</p>
-                            </div>
-                            <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                              <MessageSquare
-                                size={24}
-                                className="text-primary mb-2"
-                              />
-                              <p className="text-xs text-gray-600">Chatbot</p>
-                            </div>
-                          </div>
-                          <div className="h-32 bg-white rounded-lg shadow-sm flex items-center justify-center">
-                            <div className="text-center">
-                              <Zap
-                                size={32}
-                                className="text-primary mx-auto mb-2"
-                              />
-                              <p className="text-sm font-semibold text-gray-700">
-                                Dashboard MAX
-                              </p>
-                              <p className="text-xs text-gray-500">
-                                Demo em breve
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </video>
+                      priority
+                    />
                   </div>
                 </div>
 

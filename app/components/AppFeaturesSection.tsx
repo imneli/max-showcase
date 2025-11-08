@@ -96,39 +96,15 @@ export default function AppFeaturesSection() {
 
                   {/* Screen */}
                   <div className="relative w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
-                    {/* Status Bar */}
-                    <div className="absolute top-0 left-0 right-0 h-12 bg-linear-to-b from-black/5 to-transparent z-10 flex items-center justify-between px-8 pt-3">
-                      <span className="text-xs font-semibold">9:41</span>
-                      <div className="flex items-center gap-1">
-                        <div className="w-4 h-3 border border-black/30 rounded-sm"></div>
-                        <div className="w-1 h-2 bg-black/30 rounded-sm"></div>
-                      </div>
-                    </div>
-
-                    {/* Video Container */}
-                    <video
-                      className="w-full h-full object-cover"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    >
-                      <source src="/videos/app-demo.mp4" type="video/mp4" />
-                      {/* Fallback */}
-                      <div className="w-full h-full bg-linear-to-br from-primary/10 to-purple-100 flex items-center justify-center">
-                        <div className="text-center p-8">
-                          <div className="h-20 w-20 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center">
-                            <Package size={40} className="text-white" />
-                          </div>
-                          <p className="text-sm font-semibold text-gray-700">
-                            MAX App
-                          </p>
-                          <p className="text-xs text-gray-500 mt-1">
-                            Demo em breve
-                          </p>
-                        </div>
-                      </div>
-                    </video>
+                    {/* Image Container */}
+                    <Image
+                      src="/images/stocks.jpg"
+                      alt="MAX App Interface"
+                      width={320}
+                      height={650}
+                      className="w-full h-full object-cover object-top"
+                      priority
+                    />
                   </div>
 
                   {/* Power Button */}
